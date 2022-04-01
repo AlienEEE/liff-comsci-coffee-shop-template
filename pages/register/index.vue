@@ -91,6 +91,7 @@ export default {
             //Declare variables for line-id and line-displayname
             liffId: process.env.LIFF_ID_REGISTER,
             webhook: process.env.WEBHOOK_API_URI,
+            
 
             form:{
                 lineId: '',
@@ -100,7 +101,7 @@ export default {
                 phone: '',
                 address: '',
             },
-
+           
             menu: false,
             btnstatus:true,
             rules: {
@@ -112,6 +113,7 @@ export default {
                     return pattern.test(value) || 'Invalid e-mail.'
                 },
             },
+            
         }
     },
     mounted () {
@@ -122,6 +124,7 @@ export default {
         }).then(()=>{
             this.getUserProfile()
         });
+        console.log(this.liffId);
     },
 
     methods: {
@@ -143,7 +146,7 @@ export default {
             }else{
                 liff.login()
             }
-
+            
                 
         }, 
         async  Register() {
